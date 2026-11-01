@@ -15,6 +15,10 @@ locally in a SQLite database — no network, no accounts, no telemetry.
 <!-- A screenshot or short GIF of the UI goes a long way here. Add one when you can:
 ![screenshot](docs/screenshot.png) -->
 
+https://github.com/user-attachments/assets/e44351f2-a531-4920-898e-bf356b0ed3b1
+
+
+
 ## Features
 
 - **Session timer** with pause/resume. A high-resolution stopwatch accumulates work
