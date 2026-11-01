@@ -141,6 +141,7 @@ src/                 Application source
 extern/imgui/        Vendored Dear ImGui + GLFW/OpenGL backends
 assets/              Fonts (PressStart2P)
 data/                Local runtime data (DB, logs, notes) — gitignored
+tests/               Integration test suite
 ```
 
 ## Design notes
