@@ -174,6 +174,8 @@ A few decisions worth calling out:
 - [ ] Resolve asset/data paths relative to the executable so the app can run from
       any working directory (and as a double-clicked binary).
 - [ ] Packaging / installable artifacts per platform.
+- [ ] Local AI and custom charts
+- [ ] Gamification of the app
 
 ## License
 
