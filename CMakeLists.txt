@@ -9,6 +9,9 @@ endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# --- Testing (opt-in: -DBUILD_TESTING=ON) ---
+option(BUILD_TESTING "Build the unit tests" OFF)
+
 # --- Platform-specific flags ---
 if(MSVC)
     add_compile_definitions(NOMINMAX WIN32_LEAN_AND_MEAN _CRT_SECURE_NO_WARNINGS)
@@ -119,3 +122,9 @@ set_target_properties(productivity_tracker PROPERTIES
     # macOS: Xcode scheme working directory
     XCODE_SCHEME_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
 )
+
+# --- Unit tests ---
+if(BUILD_TESTING)
+    enable_testing()
+    add_subdirectory(tests)
+endif()

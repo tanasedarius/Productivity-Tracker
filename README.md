@@ -104,6 +104,23 @@ alias tracker='(cd /path/to/TimeTracker && ./build/productivity_tracker)'
 
 Press `Esc` to bring up the exit confirmation.
 
+## Testing
+
+The core logic (PQL query parser, timer formatting, session statistics, and
+timestamp formatting) is covered by unit tests using
+[GoogleTest](https://github.com/google/googletest), fetched automatically via CMake.
+Tests are opt-in so they don't affect the normal app build:
+
+```bash
+cmake -S . -B build-tests -DBUILD_TESTING=ON
+cmake --build build-tests
+ctest --test-dir build-tests --output-on-failure
+```
+
+The suite includes tests asserting that PQL string values are passed to SQLite as
+bound parameters rather than concatenated into SQL — i.e. that a query like
+`group:';DROP` is treated as data, not executable SQL.
+
 ## Project layout
 
 ```
@@ -146,6 +163,7 @@ A few decisions worth calling out:
 
 ## Roadmap
 
+- [x] Unit tests for the core logic (PQL parser, timer, session stats).
 - [ ] Verified Windows build (MSVC).
 - [ ] Verified macOS build.
 - [ ] Resolve asset/data paths relative to the executable so the app can run from
